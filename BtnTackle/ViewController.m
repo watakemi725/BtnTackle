@@ -24,4 +24,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)reload:(id)sender {
+}
+
+- (IBAction)push:(id)sender {
+}
 @end

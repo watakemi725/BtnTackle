@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    int timerNum;
+    int scoreNum;
+    NSTimer *timer;
+    
+}
 
+
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
+- (IBAction)reload:(id)sender;
+- (IBAction)push:(id)sender;
 
 @end
 
