@@ -20,11 +20,39 @@
     
     
     //初期設定の数字
+    timerNum = 10 ;
     pushNumStatic = 20 ;
     pushNum = pushNumStatic;
     
     _pushedLabel.text = [NSString stringWithFormat:@"%d",pushNum];
+    
+    
+    
+    //カウントダウンタイマーの開始
+    timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                             target:self
+                                           selector:@selector(time:)
+                                           userInfo:nil
+                                            repeats:YES];
+    
 }
+
+-(void)time:(NSTimer*)time{
+    
+    if ([timer isValid]) {
+        if (timerNum>0) {
+            timerNum--;
+        }else{
+            //タイマーを止める
+            [timer invalidate];
+            //画面繊維させる
+            
+        }
+        
+    }
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
