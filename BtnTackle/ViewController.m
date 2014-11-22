@@ -30,7 +30,7 @@
     
     
     //カウントダウンタイマーの開始 (http://qiita.com/09dasan/items/748f901ed1c730d9abb2 )
-    timer = [NSTimer scheduledTimerWithTimeInterval:1
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.5
                                              target:self
                                            selector:@selector(time:)
                                            userInfo:nil
@@ -39,6 +39,9 @@
 }
 
 -(void)time:(NSTimer*)time{
+    
+    NSString *homo = @"ぬっきーはホモ";
+    NSLog(@"%@",homo);
     
     if ([timer isValid]) {
         if (timerNum>0) {
@@ -49,6 +52,7 @@
             [timer invalidate];
             //画面遷移させる
             [self performSegueWithIdentifier:@"score" sender:self];
+//       ほもだけどお嫁さんになりたいです
         }
         
     }
