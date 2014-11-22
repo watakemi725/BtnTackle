@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ScoreViewController.h"
 
 @interface ViewController ()
 
@@ -28,7 +29,7 @@
     
     
     
-    //カウントダウンタイマーの開始
+    //カウントダウンタイマーの開始 (http://qiita.com/09dasan/items/748f901ed1c730d9abb2 )
     timer = [NSTimer scheduledTimerWithTimeInterval:1
                                              target:self
                                            selector:@selector(time:)
@@ -42,16 +43,27 @@
     if ([timer isValid]) {
         if (timerNum>0) {
             timerNum--;
+            _timeLabel.text = [NSString stringWithFormat:@"%d",timerNum];
         }else{
             //タイマーを止める
             [timer invalidate];
-            //画面繊維させる
-            
+            //画面遷移させる
+            [self performSegueWithIdentifier:@"score" sender:self];
         }
         
     }
 
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //2つ目の画面にパラメータを渡して遷移する
+    if ([segue.identifier isEqualToString:@"secondSegue"]) {
+        //ここでパラメータを渡す
+//        ScoreViewController *secondViewController = segue.destinationViewController;
+//        ScoreViewController. = _arguments;
+    }
+}
+
 
 
 - (void)didReceiveMemoryWarning {
