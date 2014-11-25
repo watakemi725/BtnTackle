@@ -52,7 +52,7 @@
             [timer invalidate];
             //画面遷移させる
             [self performSegueWithIdentifier:@"score" sender:self];
-//       ほもだけどお嫁さんになりたいです
+
         }
         
     }
